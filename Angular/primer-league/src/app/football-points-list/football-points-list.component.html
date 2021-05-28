@@ -1,0 +1,31 @@
+<table class = "table table-stroped" style="color: aliceblue;">
+    <thead>
+        <tr>
+            <th>Club Name</th>
+            <th>Wins</th>
+            <th>Lost</th>
+            <th>Draw</th>
+            <th>Scored Goals</th>
+            <th>Received Goals</th>
+            <th>Points</th>
+            <th>Played Matches</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let footballClub of football.sort().reverse()">
+            <td> {{footballClub.clubName }}</td>
+            <td> {{footballClub.numOfWins }} </td>
+            <td> {{footballClub.numOfDefeats }} </td>
+            <td> {{footballClub.numOfDraws }} </td>
+            <td> {{footballClub.numOfGoalsScored }} </td>
+            <td> {{footballClub.numOfGoalsReceived }} </td>
+            <td> {{footballClub.points }} </td>
+            <td> {{footballClub.matchesPlayed }} </td>
+
+        </tr>
+    </tbody>
+</table>
+
+<button class="btn btn-dark btn-lg active" (click)="sortBy('points')">Points</button>
+<button class="btn btn-dark btn-lg active" (click)="sortBy('numOfGoalsScored')">Goals</button>
+<button class="btn btn-dark btn-lg active" (click)="sortBy('numOfWins')">Wins</button>
